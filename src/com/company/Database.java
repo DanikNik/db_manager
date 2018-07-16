@@ -23,8 +23,14 @@ public class Database {
         ResultSet res = stm.executeQuery("SELECT * FROM " + _tabName);
         ResultSetMetaData resMeta = res.getMetaData();
         while (res.next()){
-            System.out.println(res.getObject(1) + ": " + res.getObject(2));
+//            System.out.println(res.getObject(1) + ": " + res.getObject(2));
+            for (int i = 1; i < resMeta.getColumnCount() + 1; i++) {
+                System.out.print(res.getObject(i));
+                System.out.print(' ');
+            }
+            System.out.println();
         }
+        stm.close();
     }
 
     public void commit() throws SQLException{

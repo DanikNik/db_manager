@@ -2,8 +2,6 @@ package com.company;
 
 import java.sql.*;
 
-import com.mysql.cj.jdbc.Blob;
-import com.company.Database;
 public class Main {
 
     public static void main(String[] args) throws SQLException{
